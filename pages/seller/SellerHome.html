@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../css/seller/SellerCommon.css" />
+    <link rel="stylesheet" href="../../css/seller/SellerHome.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header class="header"></header>
+    <main>
+      <aside class="menu">
+        <ul>
+          <li>
+            <a href="./SellerHome.html"
+              ><i class="fa fa-home" aria-hidden="true"></i>
+              <span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="./SellerOrders.html">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span>Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="./SellerProducts.html">
+              <i class="fa fa-cubes" aria-hidden="true"></i>
+              <span>Products</span>
+            </a>
+          </li>
+          <li>
+            <a href="./SellerProfile.html">
+              <i class="fa fa-user" aria-hidden="true"></i> <span>Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="logoutbtn">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <div class="analytics-dashboard">
+        <div class="sellerHome-header">
+            <div class="total-sales">
+                <h3>Total Sales</h3>
+                <p class="amount">6,78,546</p>
+                <p class="percentage">3.4% <span class="up-arrow">▲</span></p>
+            </div>
+            <div class="total-orders">
+                <h3>Total Orders</h3>
+                <p class="amount">2,495</p>
+                <p class="percentage">1.97% <span class="down-arrow">▼</span></p>
+            </div>
+            <div class="total-products">
+                <h3>Total Products</h3>
+                <p class="amount">3,842</p>
+                <p class="percentage">7% <span class="up-arrow">▲</span></p>
+            </div>
+        </div>
+        <div class="recent-orders">
+          <h2>Top Selling Products</h2>
+          <div class="search-filter">
+              <input type="text" id="searchInput" placeholder="Search Product...">
+              <!-- Remove the filter button as requested -->
+          </div>
+          <table id="productTable">
+              <thead>
+                  <tr>
+                      <th>Product ID</th>
+                      <th>Product Name</th>
+                      <th>Category</th>
+                      <th>Quantity Sold</th>
+                      <th>Total Revenue</th>
+                  </tr>
+              </thead>
+              <tbody id="tableBody">
+                  <!-- Table rows will be dynamically added here -->
+              </tbody>
+          </table>
+          <div id="pagination" class="pagination"></div>
+      </div>
+    </div>
+
+    </main>
+    <footer></footer>
+    <script type="module" src="../../js/seller/SellerCommon.js"></script>
+    <script type="module" src="../../js/seller/SellerHome.js"></script>
+  </body>
+</html>

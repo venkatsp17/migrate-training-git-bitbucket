@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header class="header">
+    </header>
+    <main>
+        <div class="role-selection">
+            <button class="role-btn" id="customerBtn">Customer</button>
+            <button class="role-btn" id="sellerBtn">Seller</button>
+        </div>
+        <div class="login-container" id="customerLogin" style="display: none;">
+            <h1>Customer Login</h1>
+            <form id="customer-form">
+                <div class="input-group">
+                    <div class="icon">
+                        <img src="../assets/icons/email.svg" alt="Email Icon">
+                    </div>
+                    <input type="text" placeholder="Email" id="customer-email">
+                </div>
+                <div class="input-group">
+                    <div class="icon">
+                        <img src="../assets/icons/password.svg" alt="Password Icon">
+                    </div>
+                    <input type="password" placeholder="Password" id="customer-password">
+                </div>
+                <button type="submit" class="request-otp" id="customer-login-btn">Login</button>
+            </form>
+            <div class="divider">Or Register with</div>
+            <button class="email-signin" id="customer-email-signin">Email</button>
+        </div>
+        <div class="login-container" id="sellerLogin" style="display: none;">
+            <h1>Seller Login</h1>
+            <form id="seller-form">
+                <div class="input-group">
+                    <div class="icon">
+                        <img src="../assets/icons/email.svg" alt="Email Icon">
+                    </div>
+                    <input type="text" placeholder="Email" id="seller-email">
+                </div>
+                <div class="input-group">
+                    <div class="icon">
+                        <img src="../assets/icons/password.svg" alt="Password Icon">
+                    </div>
+                    <input type="password" placeholder="Password" id="seller-password">
+                </div>
+                <button type="submit" class="request-otp" id="seller-login-btn">Login</button>
+            </form>
+            <div class="divider">Or Register with</div>
+            <button class="email-signin" id="seller-email-signin">Email</button>
+        </div>
+    </main>
+    <footer class="footer">
+    </footer>
+    <div id="modalContainer"></div>
+    <script type="module" src="../js/common.js"></script>
+    <script type="module" src="../js/login.js"></script>
+</body>
+</html>

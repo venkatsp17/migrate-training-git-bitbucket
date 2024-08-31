@@ -1,0 +1,103 @@
+// Variables for easy customization
+$primary-color: #333;
+$secondary-color: #e74c3c;
+$white-color: #fff;
+
+
+  // Main product page styles
+.product-page {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .product-detail {
+    // background-color: #444;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 0 auto;
+      .product-images {
+          flex: 1 1 40%;
+          img {
+              width: 100%;
+              margin-bottom: 10px;
+          }
+          .thumbnail-images {
+              display: flex;
+              justify-content: space-between;
+              img {
+                  width: 30%;
+              }
+          }
+      }
+      .product-info {
+          flex: 1 1 40%;
+          h1 {
+              font-size: 28px;
+              margin-bottom: 20px;
+          }
+          .price {
+              font-size: 24px;
+              color: $secondary-color;
+              margin-bottom: 20px;
+          }
+          .offers {
+              list-style: none;
+              padding-left: 0;
+              li {
+                  margin-bottom: 10px;
+              }
+          }
+          .size-selection {
+              margin: 20px 0;
+              label {
+                  display: block;
+                  margin-bottom: 10px;
+              }
+              .sizes {
+                  display: flex;
+                  button {
+                      border: 1px solid $primary-color;
+                      background-color: $white-color;
+                      padding: 10px 20px;
+                      margin-right: 10px;
+                      cursor: pointer;
+                      &:hover {
+                          background-color: $primary-color;
+                          color: $white-color;
+                      }
+                     
+                  }
+                  .active{
+                    background-color: $primary-color;
+                    color: $white-color;
+                  }
+              }
+          }
+          .add-to-cart {
+              width: 80%;
+              background-color: $secondary-color;
+              color: $white-color;
+              padding: 15px 20px;
+              border: none;
+              cursor: pointer;
+              &:hover {
+                  background-color: darken($secondary-color, 10%);
+              }
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-page {
+      .product-detail {
+          .product-images, .product-info {
+              flex: 1 1 100%;
+          }
+      }
+  }
+}
+

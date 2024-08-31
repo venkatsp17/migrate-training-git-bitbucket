@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../css/seller/SellerCommon.css" />
+    <link rel="stylesheet" href="../../css/seller/SellerOrders.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header class="header"></header>
+    <main>
+      <aside class="menu">
+        <ul>
+          <li>
+            <a href="./SellerHome.html"
+              ><i class="fa fa-home" aria-hidden="true"></i>
+              <span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="./SellerOrders.html">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span>Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="./SellerProducts.html">
+              <i class="fa fa-cubes" aria-hidden="true"></i>
+              <span>Products</span>
+            </a>
+          </li>
+          <li>
+            <a href="./SellerProfile.html">
+              <i class="fa fa-user" aria-hidden="true"></i> <span>Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="logoutbtn">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <div class="container">
+        <!-- Table Header -->
+        <div class="table-header">
+          <div class="search-section">
+            <div class="search-input">
+              <svg
+                class="search-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-4.35-4.35m2.65-6.65a8 8 0 11-16 0 8 8 0 0116 0z"
+                />
+              </svg>
+              <input id="searchInput" type="text" placeholder="Search..." />
+            </div>
+          </div>
+          <!-- <button class="add-customer-button">
+                <svg
+                  class="add-icon"
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"
+                  ></path>
+                </svg>
+                Add customer
+              </button> -->
+        </div>
+        <div id="emptyMessage" class="empty-message" style="display: none">
+          Order list is empty.
+        </div>
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th># Order ID</th>
+              <th>Order Date</th>
+              <th>Status</th>
+              <th>Total_Amount</th>
+              <th>Shipping_Method</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="glass-effect pagination-container">
+          <div class="text-gray">
+            <span id="currentRange">0</span> of <span id="totalCount">0</span>
+          </div>
+          <div class="pagination-options">
+            <span class="text-gray margin-right">Rows per page:</span>
+            <select id="rowsPerPage" class="text-grey focus-ring">
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+            </select>
+            <div class="pagination">
+              <button
+                id="prevPage"
+                class="pagination-button focus-ring"
+                disabled
+              >
+                &lt;
+              </button>
+              <span id="pageNumber" class="page-number">1</span>/<span
+                id="totalPages"
+                >10</span
+              >
+              <button id="nextPage" class="pagination-button focus-ring">
+                &gt;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div id="orderModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h2>Order Details</h2>
+          <div class="order-details"></div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script type="module" src="../../js/seller/SellerCommon.js"></script>
+    <script type="module" src="../../js/seller/SellerOrders.js"></script>
+  </body>
+</html>

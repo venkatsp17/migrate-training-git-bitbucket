@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../css/seller/SellerCommon.css" />
+    <link rel="stylesheet" href="../../css/seller/SellerProfile.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header class="header"></header>
+    <main>
+      <aside class="menu">
+        <ul>
+          <li>
+            <a href="./SellerHome.html"
+              ><i class="fa fa-home" aria-hidden="true"></i>
+              <span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="./SellerOrders.html">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span>Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="./SellerProducts.html">
+              <i class="fa fa-cubes" aria-hidden="true"></i>
+              <span>Products</span>
+            </a>
+          </li>
+          <li>
+            <a href="./SellerProfile.html">
+              <i class="fa fa-user" aria-hidden="true"></i> <span>Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="logoutbtn">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </main>
+    <div class="container">
+      <div class="main-content">
+        <section class="section-profile">
+          <div class="main-content-header">
+            <h1 id="greeting">Good Evening! Venkat Raman</h1>
+            <div class="edit-icon" id="edit-icon">&#9998;</div>
+          </div>
+          <div class="profile-details">
+            <div class="profile-picture">
+              <img id="profile-picture" src="" alt="Profile Picture" height="100" width="100"/>
+            </div>
+            <div class="profile-info">
+              <div class="info-row">
+                <span>Name</span>
+                <span class="profile-values" id="name"></span>
+              </div>
+              <div class="info-row">
+                <span>Address</span>
+                <span class="profile-values" id="address"></span>
+              </div>
+              <div class="info-row">
+                <span>Email</span>
+                <span class="profile-values" id="email"></span>
+              </div>
+              <div class="info-row">
+                <span>Contact Number</span>
+                <span class="profile-values" id="phone-number"></span>
+              </div>
+              <div class="info-row">
+                <span>Birthdate</span>
+                <span class="profile-values" id="birthdate"></span>
+              </div>
+              <div class="info-row">
+                <span>Gender</span>
+                <span class="profile-values" id="gender"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer></footer>
+    <script type="module" src="../../js/seller/SellerCommon.js"></script>
+    <script type="module" src="../../js/seller/SellerProfile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.registration-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    form {
+        .input-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-size: 0.9rem;
+                color: #666;
+            }
+        
+            input, select {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 1rem;
+            }
+        
+            .custom-file-upload {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+        
+                input[type="file"] {
+                    display: none;
+                }
+        
+                label {
+                    display: block;
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    background-color: #fff;
+                    text-align: center;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    color: #666;
+                    transition: background-color 0.3s, border-color 0.3s;
+        
+                    &:hover {
+                        background-color: #f0f0f0;
+                        border-color: #bbb;
+                    }
+        
+                    &:active {
+                        background-color: #e0e0e0;
+                        border-color: #aaa;
+                    }
+                }
+            }
+
+            #thumbnail-container {
+                margin-top: 1rem;
+                text-align: center;
+        
+                img {
+                    max-width: 100px;
+                    max-height: 100px;
+                    border-radius: 5px;
+                    border: 1px solid #ccc;
+                }
+            }
+        
+            .error-message {
+                color: red;
+                font-size: 0.8rem;
+                display: none;
+            }
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    }
+}

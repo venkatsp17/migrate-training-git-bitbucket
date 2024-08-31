@@ -1,0 +1,91 @@
+.product-page {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product-page .product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.product-page .product-detail .product-images {
+  flex: 1 1 40%;
+}
+.product-page .product-detail .product-images img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.product-page .product-detail .product-images .thumbnail-images {
+  display: flex;
+  justify-content: space-between;
+}
+.product-page .product-detail .product-images .thumbnail-images img {
+  width: 30%;
+}
+.product-page .product-detail .product-info {
+  flex: 1 1 40%;
+}
+.product-page .product-detail .product-info h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.product-page .product-detail .product-info .price {
+  font-size: 24px;
+  color: #e74c3c;
+  margin-bottom: 20px;
+}
+.product-page .product-detail .product-info .offers {
+  list-style: none;
+  padding-left: 0;
+}
+.product-page .product-detail .product-info .offers li {
+  margin-bottom: 10px;
+}
+.product-page .product-detail .product-info .size-selection {
+  margin: 20px 0;
+}
+.product-page .product-detail .product-info .size-selection label {
+  display: block;
+  margin-bottom: 10px;
+}
+.product-page .product-detail .product-info .size-selection .sizes {
+  display: flex;
+}
+.product-page .product-detail .product-info .size-selection .sizes button {
+  border: 1px solid #333;
+  background-color: #fff;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.product-page .product-detail .product-info .size-selection .sizes button:hover {
+  background-color: #333;
+  color: #fff;
+}
+.product-page .product-detail .product-info .size-selection .sizes .active {
+  background-color: #333;
+  color: #fff;
+}
+.product-page .product-detail .product-info .add-to-cart {
+  width: 80%;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+}
+.product-page .product-detail .product-info .add-to-cart:hover {
+  background-color: #d62c1a;
+}
+
+@media screen and (max-width: 768px) {
+  .product-page .product-detail .product-images, .product-page .product-detail .product-info {
+    flex: 1 1 100%;
+  }
+}
+
+/*# sourceMappingURL=productview.css.map */

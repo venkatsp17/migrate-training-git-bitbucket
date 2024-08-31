@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../css/seller/SellerCommon.css" />
+    <link rel="stylesheet" href="../../css/seller/SellerProducts.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header class="header"></header>
+    <main>
+      <aside class="menu">
+        <ul>
+          <li>
+            <a href="./SellerHome.html"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a>
+          </li>
+          <li>
+            <a href="./SellerOrders.html">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span>Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="./SellerProducts.html">
+            <i class="fa fa-cubes" aria-hidden="true"></i> <span>Products</span>
+        </a>
+          </li>
+          <li>
+            <a href="./SellerProfile.html">
+              <i class="fa fa-user" aria-hidden="true"></i> <span>Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="logoutbtn">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <div class="container">
+        <!-- Table Header -->
+        <div class="table-header">
+          <div class="search-section">
+            <div class="search-input">
+              <svg
+                class="search-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-4.35-4.35m2.65-6.65a8 8 0 11-16 0 8 8 0 0116 0z"
+                />
+              </svg>
+              <input id="searchInput" type="text" placeholder="Search..." />
+            </div>
+          </div>
+          <button id="openModal" class="add-button">
+                <svg
+                  class="add-icon"
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"
+                  ></path>
+                </svg>
+                Add product
+              </button>
+        </div>
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th># Product ID</th>
+              <th>Product Image</th>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Price</th>
+              <!-- <th>Brand</th>
+              <th>Category</th> -->
+              <th>Stock In Hand</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="productTableBody">
+            <!-- Product rows will be inserted here by JavaScript -->
+          </tbody>
+        </table>
+        <div class="glass-effect pagination-container">
+          <div class="text-gray">1-10 of 97</div>
+          <div class="pagination-options">
+            <span class="text-gray margin-right">Rows per page:</span>
+            <select class="text-grey focus-ring" id="rowsPerPage">
+              <option>10</option>
+              <option>20</option>
+              <option>30</option>
+            </select>
+            <div class="pagination">
+              <button class="pagination-button focus-ring" id="prevPage">&lt;</button>
+              <span class="page-number" id="pageNumber">1/10</span>
+              <button class="pagination-button focus-ring" id="nextPage">&gt;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- View Modal -->
+       <div id="productViewModal" class="product-modal">
+        <div class="product-modal-content">
+          <span class="product-close-btn">&times;</span>
+          <h2>Product Details</h2>
+          <table class="product-details-table">
+            <tr>
+              <th>Product ID</th>
+              <td id="viewProductID"></td>
+            </tr>
+            <tr>
+              <th>Name</th>
+              <td id="viewProductName"></td>
+            </tr>
+            <tr>
+              <th>Description</th>
+              <td id="viewProductDescription"></td>
+            </tr>
+            <tr>
+              <th>Price</th>
+              <td id="viewProductPrice"></td>
+            </tr>
+            <tr>
+              <th>Category</th>
+              <td id="viewProductCategory"></td>
+            </tr>
+            <tr>
+              <th>Brand</th>
+              <td id="viewProductBrand"></td>
+            </tr>
+            <tr>
+              <th>Stock Quantity</th>
+              <td id="viewProductStock"></td>
+            </tr>
+            <!-- <tr>
+              <th>Creation Date</th>
+              <td id="viewProductCreationDate"></td>
+            </tr>
+            <tr>
+              <th>Last Updated</th>
+              <td id="viewProductLastUpdated"></td>
+            </tr> -->
+          </table>
+        </div>
+      </div>
+
+      <!-- Edit Modal -->
+      <div id="productEditModal" class="product-modal">
+        <div class="product-modal-content">
+          <span class="product-close-btn">&times;</span>
+          <h2>Edit Product</h2>
+          <form id="editProductForm" class="product-edit-form">
+            <table>
+              <tr>
+                <th>Product ID</th>
+                <td><input type="text" id="editProductID" disabled/></td>
+              </tr>
+              <tr>
+                <th>Product Name</th>
+                <td><input type="text" id="editProductName" disabled/></td>
+              </tr>
+              <tr>
+                <th>Price</th>
+                <td><input type="text" id="editProductPrice" /></td>
+              </tr>
+              <tr>
+                <th>Stock Quantity</th>
+                <td><input type="text" id="editProductStock" /></td>
+              </tr>
+            </table>
+            <button type="submit" class="product-save-button">Save Changes</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Add Product Modal -->
+      <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Product</h2>
+            <form id="productForm" novalidate>
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error" id="nameError"></div>
+                
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <div class="error" id="descriptionError"></div>
+                
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required min="0">
+                <div class="error" id="priceError"></div>
+                
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <div class="error" id="categoryError"></div>
+                
+                <label for="brand">Brand:</label>
+                <input type="text" id="brand" name="brand" required>
+                <div class="error" id="brandError"></div>
+                
+                <label for="stock_Quantity">Stock Quantity:</label>
+                <input type="number" id="stock_Quantity" name="stock_Quantity" required min="0">
+                <div class="error" id="stockQuantityError"></div>
+
+                <div class="input-group">
+                  <label for="profile_picture_url">Product Photo</label>
+                  <div class="custom-file-upload">
+                      <input type="file" id="profile_picture_url" name="profile_picture_url" accept="image/*">
+                      <label for="profile_picture_url">Choose File</label>
+                  </div>
+                  <div id="thumbnail-container"></div>
+                  <span class="error-message" id="profile_picture_url-error"></span>
+              </div>    
+                
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+
+    </main>
+    <footer></footer>
+    <script type="module" src="../../js/seller/SellerCommon.js"></script>
+    <script type="module" src="../../js/seller/SellerProducts.js"></script>
+  </body>
+</html>
